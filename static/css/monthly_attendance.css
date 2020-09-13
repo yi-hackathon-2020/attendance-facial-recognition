@@ -1,0 +1,51 @@
+table {
+    width: 100%;
+}
+
+table.dataframe.data,
+.dataframe th,
+.dataframe td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+.data th {
+    background-color: #002c42;
+    color: white;
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+    padding: 10px;
+}
+
+tr:hover {
+    background-color: #ffff99;
+}
+
+.absent {
+    background-color: #f0304d;
+    color: white;
+    padding: 3px 4px;
+    font-size: 12px;
+    border-radius: 15%;
+    font-weight: 700;
+}
+
+.present {
+    background-color: #35991a;
+    color: white;
+    padding: 3px 4px;
+    font-size: 12px;
+    border-radius: 15%;
+    font-weight: 700;
+}

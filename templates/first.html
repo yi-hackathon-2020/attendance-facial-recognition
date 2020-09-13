@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/home.css">
+    </link>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <style>
+        .footer {
+            margin-bottom: 0;
+        }
+
+        .footer .row {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .ficon {
+            padding: 10px;
+            font-size: 25px;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="mainPanel">
+        <header>
+            <div class="head-content">
+
+                <h1 class="">One-Click Attendance</h1>
+                <hr style="width:40%;" class="gray_line">
+            </div>
+        </header>
+        <nav id="mainNav" class="navbar navbar-default navbar-custom">
+            <div class="container">
+                <div class="navbar-heade">
+
+                    <h2 class="navbar-brand">Upload Screenshot</h2>
+
+                </div>
+
+            </div>
+        </nav>
+
+        <div id="regs" class="containerx tab-content tab-active">
+
+            <div id="main_container" class="container">
+
+                <div class="inner_content">
+                    <div class="content_panel">
+                        <div class="panel-header-blue">
+                            <h2>Upload ScreenShot</h2>
+                        </div>
+                        <div class="container2 animated bounce">
+                            <form id="form1" runat="server" method="POST" action="" enctype="multipart/form-data"
+                                onsubmit="wait()">
+                                <div class="alert"></div>
+                                <div id='img_container'>
+                                    <div class="input-group" style="margin:auto;">
+                                        <div class="custom-file">
+                                            <input type="file" id="inputGroupFile01" name="file"
+                                                class="imgInp custom-file-input"
+                                                aria-describedby="inputGroupFileAddon01" multiple style="margin: 20px;">
+                                            <label class="custom-file-label" for="inputGroupFile01"
+                                                style="margin: 20px;">Choose file</label>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="single">
+                                        <input type="number" name="day" style="margin:20px;height:50px;width:200px;"
+                                            min="1" max="31" placeholder="Enter day..." />
+                                        <input type="submit" name="submit" value="Upload"
+                                            style="margin:20px;border:none;font-weight:600;padding:10px 20px;background-color:#1b4965;color:white;float:center;">
+                                    </div>
+
+                            </form>
+                        </div>
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#inputGroupFile01").change(function (event) {
+            readURL(this);
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                var filename = $("#inputGroupFile01").val();
+                filename = filename.substring(filename.lastIndexOf('\\') + 1);
+                reader.onload = function (e) {
+                    debugger;
+                    $('#preview').attr('src', e.target.result);
+                    $('#preview').hide();
+                    $('#preview').fadeIn(500);
+                    $('.custom-file-label').text(filename);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            $(".alert").removeClass("loading").hide();
+        }
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container-fluid "
+        style="background-color:#1b4965;position:relative;bottom:0px;padding:15px;margin-bottom:0px; ">
+        <div class="footer">
+            <div class="row ">
+                <div class="foot1 ">
+                    <span style="color:white;font-size:25px; ">Attendance Portal<br></span>
+
+                </div>
+                <div class="foot2 ">
+                    <span style="color:white;font-size:20px;"><b><i class="fas fa-phone"
+                                style="font-size:20px;padding:8px;"></i>1234567890</b></span>
+
+                </div>
+                <div class="foot2 ">
+                    <span style="color:white;font-size:20px;"><b><i class="fas fa-user"
+                                style="font-size:20px;padding:8px;"></i>attendancePortal@gmail.com</b></span>
+
+                </div>
+                <div>
+                    <i class="fa fa-facebook ficon" style="background-color: dodgerblue;color:white; "></i>
+                    <i class="fa fa-twitter ficon" style="background-color: dodgerblue;color:white; "></i>
+                    <i class="fa fa-linkedin ficon" style="background-color: dodgerblue; "></i>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
