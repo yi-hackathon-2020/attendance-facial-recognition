@@ -30,7 +30,7 @@ The following instructions are primarily aimed at Linux users.
   Additionally, to install development requirements (formatter, linter):
 
   ```sh
-  pip install -r dev-requirements.txt
+  pip install -r dev-requirements.txt --use-feature=2020-resolver
   ```
 
 - Alternatively, with [`pipenv`](https://pipenv.pypa.io/en/latest/), this can be
@@ -43,7 +43,7 @@ The following instructions are primarily aimed at Linux users.
   Additionally, to install development requirements (formatter, linter):
 
   ```sh
-  pipenv shell --dev
+  pipenv install --dev
   ```
 
   To spawn a shell in the created virtual environment:
