@@ -7,49 +7,24 @@ Our submission for the YI InnovIndia Hackathon 2020, conducted on 31st July, 202
 The following instructions are primarily aimed at Linux users.
 
 - Install the `cmake` package using your distribution's package manager.
-- Clone the repository.
-- `cd` into the project directory.
-- Create a Python virtual environment (Python 3.3+):
+- Clone the repository and switch to the project directory.
 
-  ```sh
-  python3 -m venv venv
+  ```shell
+  $ git clone https://github.com/yi-hackathon-2020/attendance-facial-recognition
+  $ cd attendance-facial-recognition
+  ```
+
+- Install [`poetry`](https://python-poetry.org/docs/) if not installed already.
+  Then, install Python requirements using `poetry`:
+
+  ```shell
+  poetry install
   ```
 
 - Activate the virtual environment:
 
-  ```sh
-  source venv/bin/activate
-  ```
-
-- Install necessary libraries:
-
-  ```sh
-  pip install -r requirements.txt --use-feature=2020-resolver
-  ```
-
-  Additionally, to install development requirements (formatter, linter):
-
-  ```sh
-  pip install -r dev-requirements.txt --use-feature=2020-resolver
-  ```
-
-- Alternatively, with [`pipenv`](https://pipenv.pypa.io/en/latest/), this can be
-  done using a single command:
-
-  ```sh
-  pipenv install
-  ```
-
-  Additionally, to install development requirements (formatter, linter):
-
-  ```sh
-  pipenv install --dev
-  ```
-
-  To spawn a shell in the created virtual environment:
-
-  ```sh
-  pipenv shell
+  ```shell
+  poetry shell
   ```
 
 ## Training
