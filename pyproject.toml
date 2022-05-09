@@ -21,7 +21,7 @@ SQLAlchemy = "^1.4.18"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^22.3", allow-prereleases = true}
-pylint = {version = "^2.13.7", allow-prereleases = true}
+pylint = {version = "^2.13.8", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
